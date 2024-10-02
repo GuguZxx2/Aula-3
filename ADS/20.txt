@@ -1,0 +1,21 @@
+Exercicio 20
+
+import javax.swing.JOptionPane;
+
+public class IntervaloComIncremento {
+    public static void main(String[] args) {
+       
+        String inputLimite = JOptionPane.showInputDialog("Digite o limite superior:");
+        int limite = Integer.parseInt(inputLimite);
+
+        String inputIncremento = JOptionPane.showInputDialog("Digite o incremento:");
+        int incremento = Integer.parseInt(inputIncremento);
+
+        String resultado = "Números do intervalo:\n";
+        for (int i = 0; i <= limite; i += incremento) {
+            resultado += i + " ";
+        }
+
+        JOptionPane.showMessageDialog(null, resultado);
+    }
+}

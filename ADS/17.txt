@@ -1,0 +1,16 @@
+Exercício 17
+
+import javax.swing.JOptionPane;
+
+public class ConversorPolegadas {
+    public static void main(String[] args) {
+        String tabela = "Tabela de Conversão de Polegadas para Centímetros\n";
+        tabela += "----------------------------------------\n";
+        for (int polegadas = 1; polegadas <= 20; polegadas++) {
+            double centimetros = polegadas * 2.54;
+            tabela += polegadas + " polegadas = " + centimetros + " centímetros\n";
+       }
+
+        JOptionPane.showMessageDialog(null, tabela);
+    }
+}

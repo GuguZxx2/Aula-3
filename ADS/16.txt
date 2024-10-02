@@ -1,0 +1,22 @@
+Exercício 16
+
+import javax.swing.JOptionPane;
+
+public class Fibonacci {
+    public static void main(String[] args) {
+       
+        String input = JOptionPane.showInputDialog("Digite um número:");
+        int n = Integer.parseInt(input);
+
+        int primeiro = 0, segundo = 1;
+        String sequencia = "0, 1";
+        for (int i = 2; i < n; i++) {
+            int proximo = primeiro + segundo;
+            sequencia += ", " + proximo;
+            primeiro = segundo;
+            segundo = proximo;
+        }
+
+        JOptionPane.showMessageDialog(null, "Sequência de Fibonacci até " + n + ":\n" + sequencia);
+    }
+}

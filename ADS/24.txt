@@ -1,0 +1,47 @@
+Exercício 24
+
+import javax.swing.JOptionPane;
+
+public class CalculadoraDeCompra {
+
+    public static void main(String[] args) {
+        double total = 0;
+        
+        do {
+            double preco = lerPreco();
+            int quantidade = lerQuantidade();
+            
+            if (preco > 0 && quantidade > 0) {
+                total += preco * quantidade;
+            } else {
+                JOptionPane.showMessageDialog(null, "Preço e quantidade devem ser valores positivos. Por favor, digite novamente.");
+            }
+        } while (quantidade != 0);
+        
+        JOptionPane.showMessageDialog(null, "O total a ser pago é: R$ " + total);
+    }
+
+    private static double lerPreco() {
+        double preco;
+        do {
+            preco = Double.parseDouble(JOptionPane.showInputDialog("Digite o preço da mercadoria:"));
+            if (preco <= 0) {
+                JOptionPane.showMessageDialog(null, "O preço deve ser um valor positivo. Digite novamente.");
+            }
+        } while (preco <= 0);
+        
+        return preco;
+    }
+
+    private static int lerQuantidade() {
+        int quantidade;
+        do {
+            quantidade = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de itens comprados:"));
+            if (quantidade < 0) {
+                JOptionPane.showMessageDialog(null, "A quantidade deve ser um valor positivo. Digite novamente.");
+            }
+        } while (quantidade < 0);
+        
+        return quantidade;
+    }
+}

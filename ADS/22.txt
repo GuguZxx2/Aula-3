@@ -1,0 +1,19 @@
+Exercício 22
+
+import javax.swing.JOptionPane;
+
+public class Main {
+    public static void main(String[] args) {
+        String limiteSuperiorStr = JOptionPane.showInputDialog("Digite o limite superior do intervalo:");
+        int limiteSuperior = Integer.parseInt(limiteSuperiorStr);
+
+        StringBuilder numerosImpares = new StringBuilder();
+        for (int i = 1; i < limiteSuperior; i++) {
+            if (i % 2 != 0) { // Verifica se o número é ímpar
+                numerosImpares.append(i).append(", ");
+            }
+        }
+
+        JOptionPane.showMessageDialog(null, "Números ímpares menores que " + limiteSuperior + ": " + numerosImpares.toString());
+    }
+}
